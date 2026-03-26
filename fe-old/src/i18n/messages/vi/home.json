@@ -1,0 +1,78 @@
+{
+  "ContactUs": "Liên hệ với chúng tôi",
+  "Source": "Thư viện mã nguồn",
+  "ViewAllService": "Xem tất cả giải pháp",
+  "Consultation": "Liên hệ tư vấn",
+  "Hero": {
+    "h1": "Vietcod Technology",
+    "p": "Chia sẻ & phát triển các giải pháp game Mobile, H5, PC, Client, Web game chất lượng cao",
+    "tagline": "Đồng hành cùng nhà phát triển trong hành trình vận hành sản phẩm game",
+    "features": [
+      { "title": "Thư viện mã nguồn phong phú" },
+      { "title": "Tư vấn triển khai Web & Mobile" },
+      { "title": "Hỗ trợ nhiều người chơi" },
+      { "title": "Tối ưu hiệu suất & vận hành" },
+      { "title": "Đồng hành kỹ thuật sau triển khai" }
+    ]
+  },
+  "Service": {
+    "header": {
+      "title": "Giải pháp kỹ thuật chúng tôi cung cấp",
+      "content": "Vietcod mang đến các giải pháp và tài nguyên kỹ thuật giúp nhà phát triển tối ưu quá trình vận hành game. Chúng tôi hỗ trợ từ tư vấn đến triển khai thực tế."
+    },
+    "items": {
+      "1": {
+        "title": "Chia sẻ Mã Nguồn Game",
+        "content": "Cung cấp tài nguyên và mã nguồn tham khảo cho game web, mobile, tool quản lý, phiên bản Việt hóa, hoặc tùy chỉnh theo yêu cầu kỹ thuật."
+      },
+      "2": {
+        "title": "Phát triển hệ thống web game",
+        "content": "Thiết kế website, shop vật phẩm, hệ thống người dùng và bảng điều khiển quản trị."
+      },
+      "3": {
+        "title": "Setup & Triển Khai Máy Chủ",
+        "content": "Hỗ trợ kỹ thuật trong quá trình cài đặt, đồng bộ client – server, tối ưu hệ thống và hướng dẫn vận hành."
+      },
+      "4": {
+        "title": "Hỗ trợ & Bảo trì kỹ thuật",
+        "content": "Giám sát hệ thống, backup, xử lý sự cố, tư vấn nâng cấp và tối ưu hiệu suất. Hỗ trợ kỹ thuật 24/7."
+      }
+    },
+    "ViewAllService": "Thư viện mã nguồn"
+  },
+  "Feature": {
+    "items": {
+      "1": {
+        "title": "Thư viện game đa dạng",
+        "content": "Bao gồm các mã nguồn tham khảo cho web, mobile và tool game sẵn sàng tùy chỉnh."
+      },
+      "2": {
+        "title": "Hỗ trợ triển khai nhanh",
+        "content": "Nhận tư vấn và hướng dẫn để có thể triển khai game chỉ trong thời gian ngắn."
+      },
+      "3": {
+        "title": "Tối ưu & ổn định",
+        "content": "Giải pháp được kiểm thử, đảm bảo hiệu năng và khả năng mở rộng."
+      },
+      "4": {
+        "title": "Bảo mật thông tin",
+        "content": "Toàn bộ dữ liệu và tài nguyên được bảo mật, mã hóa an toàn."
+      },
+      "5": {
+        "title": "Hỗ trợ sau bàn giao",
+        "content": "Đội ngũ kỹ thuật sẵn sàng hỗ trợ cài đặt và hướng dẫn vận hành."
+      },
+      "6": {
+        "title": "Sẵn sàng hoạt động",
+        "content": "Các giải pháp kỹ thuật có thể triển khai ngay trong môi trường của bạn."
+      }
+    }
+  },
+  "WhyUs": {
+    "sectionTitle": "TẠI SAO CHỌN CHÚNG TÔI",
+    "headingLine1": "Đối tác kỹ thuật tin cậy cho",
+    "headingLine2": "phát triển & vận hành game nhanh",
+    "description": "Vietcod mang đến kho tài nguyên và giải pháp kỹ thuật cho nhà phát triển. Chúng tôi hỗ trợ bạn trong mọi giai đoạn triển khai và vận hành sản phẩm game.",
+    "animatedText": "Kho giải pháp game sẵn sàng"
+  }
+}

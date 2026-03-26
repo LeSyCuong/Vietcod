@@ -1,0 +1,40 @@
+{
+  "heading": {
+    "Cooperation": "Liên hệ chúng tôi"
+  },
+  "nav": {
+    "solutions": "Giải pháp",
+    "business": "Kinh doanh",
+    "blog": "Blog",
+    "about": "Về chúng tôi",
+    "login": "Đăng nhập",
+    "webGame": "Thiết kế web game",
+    "source": "Mã nguồn",
+    "orders": "Đơn hàng",
+    "register": "Đăng ký",
+    "services": "Dịch vụ",
+    "vpsCheap": "VPS giá rẻ",
+    "vpsSSD": "VPS ổn định",
+    "hosting": "Hosting",
+    "info": "Thông tin",
+    "history": "Lịch sử",
+    "logout": "Đăng xuất",
+    "contact": "Liên hệ",
+    "language": "Ngôn ngữ",
+    "software": "Phát triển phần mềm",
+    "web": "Phát triển hệ thống web",
+    "mobile": "Phát triển ứng dụng di động",
+    "viewAll": "Xem tất cả",
+    "digital": "Chuyển đổi số",
+    "security": "Quyền riêng tư và bảo mật",
+    "automation": "Tự động hóa",
+    "system": "Tích hợp hệ thống"
+  },
+  "languages": {
+    "EN": "English",
+    "ZH": "中文",
+    "JA": "日本語",
+    "KO": "한국어",
+    "VI": "Tiếng Việt"
+  }
+}

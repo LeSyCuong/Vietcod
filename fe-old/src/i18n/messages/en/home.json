@@ -1,0 +1,79 @@
+{
+  "ContactUs": "Contact Us",
+  "Source": "Game Source Library",
+  "ViewAllService": "View All Solutions",
+  "Consultation": "Contact Consultation",
+  "Hero": {
+    "h1": "Vietcod Technology",
+    "p": "Providing professional technical solutions and shared game source codes for Mobile, H5, PC, and Web platforms.",
+    "tagline": "Partnering with developers to commercialize your game ideas effectively.",
+    "features": [
+      { "title": "Extensive game source library" },
+      { "title": "Web & Mobile ready frameworks" },
+      { "title": "Multiplayer support" },
+      { "title": "Integrated payment system templates" },
+      { "title": "Optimized performance & stability" },
+      { "title": "Post-deployment technical support" }
+    ]
+  },
+  "Service": {
+    "header": {
+      "title": "Our Technical Solutions",
+      "content": "Vietcod provides practical technical resources and development services to help game creators launch and operate efficiently. From consultation to deployment, we are your trusted technical partner."
+    },
+    "items": {
+      "1": {
+        "title": "Game Source Code Sharing",
+        "content": "We offer ready-to-use and customizable game source packages for web, mobile, management tools, and localized versions upon request."
+      },
+      "2": {
+        "title": "Web System Development",
+        "content": "Designing web game portals, in-game item shops, user management systems, and admin dashboards."
+      },
+      "3": {
+        "title": "Server Setup & Deployment",
+        "content": "Assisting in installation, client-server synchronization, system optimization, and deployment guidance for stable operations."
+      },
+      "4": {
+        "title": "Technical Support & Maintenance",
+        "content": "Providing system monitoring, backups, issue resolution, performance optimization, and 24/7 technical assistance."
+      }
+    },
+    "ViewAllService": "Game Source Library"
+  },
+  "Feature": {
+    "items": {
+      "1": {
+        "title": "Diverse Game Library",
+        "content": "A wide range of sample and reference game source codes for web, mobile, and management tools."
+      },
+      "2": {
+        "title": "Quick Deployment Support",
+        "content": "Receive guidance to deploy your project rapidly and efficiently."
+      },
+      "3": {
+        "title": "Optimized & Stable Systems",
+        "content": "All resources are pre-tested to ensure performance, scalability, and reliability."
+      },
+      "4": {
+        "title": "Data Security",
+        "content": "All technical resources and configurations are encrypted and stored securely."
+      },
+      "5": {
+        "title": "Post-Delivery Assistance",
+        "content": "We assist with setup, basic operations, and troubleshooting after delivery."
+      },
+      "6": {
+        "title": "Ready-to-Use Solutions",
+        "content": "Implement technical solutions immediately in your own environment."
+      }
+    }
+  },
+  "WhyUs": {
+    "sectionTitle": "WHY CHOOSE US",
+    "headingLine1": "Your Trusted Partner For",
+    "headingLine2": "Fast Game Development & Operations",
+    "description": "Vietcod provides a diverse collection of technical resources and game solutions for developers. We support every stage of your game’s deployment and operation, ensuring efficiency and stability.",
+    "animatedText": "Ready-to-launch Game Solutions"
+  }
+}

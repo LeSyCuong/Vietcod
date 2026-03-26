@@ -1,0 +1,10 @@
+{
+  "cate": {
+    "all": "All",
+    "corporate": "Corporate News",
+    "export": "Export Market",
+    "analysis": "Industry Analysis",
+    "legal": "Legal & Certification",
+    "products": "Featured Products"
+  }
+}

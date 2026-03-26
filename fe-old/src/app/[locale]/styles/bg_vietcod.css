@@ -1,0 +1,13 @@
+.bg_vietcod {
+  background: url("/bg_vietcod.png") center;
+  background-size: cover;
+  background-clip: text;
+  color: transparent;
+  animation: animateText 10s infinite alternate;
+}
+
+@keyframes animateText {
+  to {
+    background-position: -400px;
+  }
+}

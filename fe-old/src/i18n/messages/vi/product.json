@@ -1,0 +1,25 @@
+{
+  "page": {
+    "search": "Tìm",
+    "input": "Nhập sản phẩm cần tìm...",
+    "cate": "Thể loại",
+    "price": "Khoảng giá",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "view": "Xem",
+    "all": "Tất cả"
+  },
+  "detail": {
+    "buttonContact": "Liên hệ chúng tôi",
+    "support": "Hướng dẫn đóng gói đúng chuẩn, hỗ trợ tích hợp hệ thống quản lý tồn kho.",
+    "titleContact": "Tư vấn kỹ thuật",
+    "news": "Tin tức mới nhất",
+    "all": "Xem tất cả",
+    "prod": "Sản phẩm nổi bật",
+    "code": "Mã sản phẩm",
+    "contact": "Liên hệ tư vấn",
+    "tym": "Quan tâm",
+    "detail": "THÔNG TIN CHI TIẾT",
+    "view": "MÔ TẢ SẢN PHẨM"
+  }
+}
