@@ -12,7 +12,15 @@ type NavLink = {
 const navigation = [
   {
     title: "Company",
-    links: [{ title: "About", href: "/about" }],
+    links: [
+      { title: "About", href: "/about" },
+      { title: "Contact", href: "tel:+84865811722", external: true },
+      {
+        title: "View Source",
+        href: "https://github.com/LeSyCuong/Vietcod",
+        external: true,
+      },
+    ],
   },
   {
     title: "Dịch vụ",

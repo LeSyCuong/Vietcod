@@ -17,6 +17,7 @@ import { PrimaryButton } from "../button";
 import { AnalyticsStars } from "../svg/analytics-stars";
 import { WebAppLight } from "../svg/web-app-light";
 import { CodeEditor } from "../ui/code-editor";
+import Link from "next/link";
 
 const theme = {
   plain: {
@@ -69,13 +70,9 @@ export function AnalyticsBento() {
   return (
     <div className="relative flex justify-center w-full">
       <div className="absolute z-50 top-14">
-        <button
-          type="button"
-          aria-label="Show API code"
-          onClick={() => toggleShowApi(!showApi)}
-        >
-          <PrimaryButton shiny label="Show API code" IconLeft={Wand2} />
-        </button>
+        <Link href="/pricing">
+          <PrimaryButton shiny label="Web game trọn gói" IconLeft={Wand2} />
+        </Link>
       </div>
       <div
         className={cn(

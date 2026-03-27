@@ -322,8 +322,8 @@ export const CodeExamples: React.FC<Props> = ({ className }) => {
                 IconRight={ChevronRight}
               />
             </Link>
-            <Link key="docs" href="/demo-website">
-              <SecondaryButton label="Demo website" IconRight={ChevronRight} />
+            <Link key="docs" href="/pricing">
+              <SecondaryButton label="List website" IconRight={ChevronRight} />
             </Link>
           </div>
         </div>
