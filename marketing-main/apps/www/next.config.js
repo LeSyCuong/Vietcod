@@ -13,13 +13,9 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // Bỏ qua lỗi TypeScript khi build
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // Bỏ qua lỗi ESLint khi build (nếu cần)
-    ignoreDuringBuilds: true,
-  },
+  // Đã xóa block eslint cũ ở đây để tránh lỗi Invalid Key
   images: {
     remotePatterns: [
       {
@@ -34,7 +30,8 @@ const nextConfig = {
   },
   pageExtensions: ["tsx", "mdx", "ts", "js"],
   reactStrictMode: true,
-  cacheComponents: true,
+  // Bật tính năng cache mới của Next.js 16
+  cacheComponents: true, 
   async headers() {
     return [
       {
@@ -47,7 +44,7 @@ const nextConfig = {
     return [
       {
         source: "/changelog/:slug",
-        destination: "/changelog#:slug", // Matched parameters can be used in the destination
+        destination: "/changelog#:slug",
       },
       {
         source: "/docs",
