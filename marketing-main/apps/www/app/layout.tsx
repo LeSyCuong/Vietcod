@@ -9,6 +9,7 @@ import "./globals.css";
 import { ConsentManagerProvider } from "@c15t/nextjs";
 import { ConsentBanner } from "./consent-banner";
 import { Tracking } from "./tracking";
+import { Suspense } from "react";
 
 const parsedEnv = env();
 
@@ -83,7 +84,9 @@ export default function RootLayout({
           <ConsentBanner />
 
           <div className="relative overflow-x-clip">
-            <Navigation />
+            <Suspense fallback={<div className="h-16" />}>
+              <Navigation />
+            </Suspense>
             {children}
             <Tracking />
             {process.env.NODE_ENV !== "production" ? (
