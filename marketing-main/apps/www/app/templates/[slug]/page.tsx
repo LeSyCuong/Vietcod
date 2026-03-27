@@ -1,4 +1,3 @@
-// app/templates/[slug]/page.tsx
 import {
   ArrowLeft,
   PlayCircle,
@@ -14,18 +13,27 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { API_URL, type GameProduct, getImgUrl } from "../data";
 
+// [CHỈNH SỬA] Ép trang này luôn render động để vượt qua lỗi Prerender khi Build
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function TemplateDetail(props: Props) {
-  const params = await props.params;
+  // Next.js 15+ yêu cầu await params trước khi sử dụng
+  const { slug } = await props.params;
 
-  const res = await fetch(`${API_URL}/sanpham-game`, { cache: "no-store" });
+  // Fetch dữ liệu từ API của Vietcod
+  const res = await fetch(`${API_URL}/sanpham-game`, { 
+    cache: "no-store",
+    next: { revalidate: 0 } 
+  });
+  
   if (!res.ok) return notFound();
 
   const games: GameProduct[] = await res.json();
-  const game = games.find((g) => g.id.toString() === params.slug);
+  const game = games.find((g) => g.id.toString() === slug);
 
   if (!game) return notFound();
 
@@ -143,7 +151,7 @@ export default async function TemplateDetail(props: Props) {
             </div>
           )}
 
-          <div className="w-full p-8 md:p-12 rounded-3xl  border border-white/15 backdrop-blur-3xl relative overflow-hidden">
+          <div className="w-full p-8 md:p-12 rounded-3xl border border-white/15 backdrop-blur-3xl relative overflow-hidden">
             <h3 className="text-2xl font-black text-white mb-8 border-l-4 border-zinc-500 pl-4 uppercase tracking-tighter">
               Thông số
             </h3>
