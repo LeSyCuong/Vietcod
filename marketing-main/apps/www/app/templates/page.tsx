@@ -1,7 +1,7 @@
-// app/templates/page.tsx
 import { Suspense } from "react";
 import { TemplatesClient } from "./client";
-import { API_URL, type GameProduct } from "./data";
+import { type GameProduct } from "./data";
+import { db } from "@/lib/db";
 
 export const metadata = {
   title: "Server Game Online | Vietcod",
@@ -31,14 +31,17 @@ export const metadata = {
 };
 
 async function GameList() {
-  const res = await fetch(`${API_URL}/sanpham-game`, {
-    cache: "no-store",
-    next: { revalidate: 0 },
-  });
-
   let games: GameProduct[] = [];
-  if (res.ok) {
-    games = await res.json();
+
+  try {
+    const [rows] = await db.execute(
+      "SELECT id, name, img, price, category, content, link_youtube FROM sanpham_game ORDER BY id DESC",
+    );
+
+    games = rows as GameProduct[];
+  } catch (error) {
+    console.error("Database Query Error:", error);
+    games = [];
   }
 
   return <TemplatesClient initialGames={games} />;

@@ -1,31 +1,50 @@
-// app/templates/[slug]/page.tsx
-import {
-  ArrowLeft,
-  PlayCircle,
-  ShieldCheck,
-  Zap,
-  Globe,
-  Cpu,
-} from "lucide-react";
+import { ArrowLeft, PlayCircle, Globe, Cpu } from "lucide-react";
 import { CTA } from "@/components/cta";
 import { ChangelogLight } from "@/components/svg/changelog";
-import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { API_URL, type GameProduct, getImgUrl } from "../data";
+import { type GameProduct, getImgUrl } from "../data";
+import { db } from "@/lib/db";
+
+export async function generateStaticParams() {
+  try {
+    const [rows] = await db.execute(
+      "SELECT id FROM sanpham_game ORDER BY id DESC",
+    );
+    const games = rows as { id: number }[];
+
+    return games.map((game) => ({
+      slug: game.id.toString(),
+    }));
+  } catch (error) {
+    console.error("Lỗi khi sinh static params cho game:", error);
+    return [];
+  }
+}
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function TemplateDetail(props: Props) {
-  const params = await props.params;
+  const resolvedParams = await props.params;
+  const slug = resolvedParams.slug;
 
-  const res = await fetch(`${API_URL}/sanpham-game`, { cache: "no-store" });
-  if (!res.ok) return notFound();
+  let game: GameProduct | undefined = undefined;
 
-  const games: GameProduct[] = await res.json();
-  const game = games.find((g) => g.id.toString() === params.slug);
+  try {
+    const [rows] = await db.execute(
+      "SELECT id, name, img, price, category, content, link_youtube FROM sanpham_game WHERE id = ? LIMIT 1",
+      [slug],
+    );
+
+    const games = rows as GameProduct[];
+    if (games.length > 0) {
+      game = games[0];
+    }
+  } catch (error) {
+    console.error(`Database Query Error for slug ${slug}:`, error);
+  }
 
   if (!game) return notFound();
 
@@ -38,7 +57,6 @@ export default async function TemplateDetail(props: Props) {
 
   return (
     <>
-      {/* Background Decorator */}
       <div className="relative mx-auto -z-100 pt-[64px]">
         <ChangelogLight className="w-full max-w-[1000px] mx-auto -top-40 opacity-30" />
       </div>
@@ -59,9 +77,6 @@ export default async function TemplateDetail(props: Props) {
             <div className="mt-6 flex items-baseline gap-2">
               <span className="text-4xl font-black text-white tracking-tighter">
                 {formatPrice(game.price)}
-              </span>
-              <span className="text-[10px] text-zinc-500 font-bold uppercase">
-                Bàn giao trọn gói
               </span>
             </div>
           </div>
@@ -94,10 +109,10 @@ export default async function TemplateDetail(props: Props) {
             <div className="p-4 rounded-2xl border border-white/15 backdrop-blur-sm">
               <div className="flex justify-between items-center">
                 <span className="text-xs font-bold uppercase text-zinc-500 flex items-center gap-2">
-                  <Cpu className="w-3 h-3" /> Hạ tầng
+                  <Cpu className="w-3 h-3" /> Bàn giao
                 </span>
                 <span className="text-sm font-bold text-zinc-300">
-                  Vietcod Engine v4.0
+                  Trọn gói
                 </span>
               </div>
             </div>
@@ -143,7 +158,7 @@ export default async function TemplateDetail(props: Props) {
             </div>
           )}
 
-          <div className="w-full p-8 md:p-12 rounded-3xl  border border-white/15 backdrop-blur-3xl relative overflow-hidden">
+          <div className="w-full p-8 md:p-12 rounded-3xl border border-white/15 backdrop-blur-3xl relative overflow-hidden">
             <h3 className="text-2xl font-black text-white mb-8 border-l-4 border-zinc-500 pl-4 uppercase tracking-tighter">
               Thông số
             </h3>

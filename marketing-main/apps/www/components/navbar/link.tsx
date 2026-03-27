@@ -7,13 +7,20 @@ type Props = { href: string; label: string; external?: boolean };
 
 export const DesktopNavLink: React.FC<Props> = ({ href, label, external }) => {
   const segment = useSelectedLayoutSegment();
+
+  const isActive = segment ? href.startsWith(`/${segment}`) : href === "/";
+
   return (
     <Link
       href={href}
       target={external ? "_blank" : undefined}
-      className={cn("text-white/50 hover:text-white/90 duration-200 text-sm tracking-[0.07px]", {
-        "text-white": href.startsWith(`/${segment}`),
-      })}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={cn(
+        "text-white/50 hover:text-white/90 duration-200 text-sm tracking-[0.07px]",
+        {
+          "text-white": isActive,
+        },
+      )}
     >
       {label}
     </Link>
@@ -25,17 +32,24 @@ export function MobileNavLink({
   label,
   external,
   onClick,
-}: { href: string; label: string; external?: boolean; onClick: () => void }) {
+}: {
+  href: string;
+  label: string;
+  external?: boolean;
+  onClick: () => void;
+}) {
   const segment = useSelectedLayoutSegment();
   const router = useRouter();
+
+  const isActive = segment ? href.startsWith(`/${segment}`) : href === "/";
 
   return (
     <button
       type="button"
       className={cn(
-        "text-white/50 hover:text-white duration-200 text-lg font-medium tracking-[0.07px] py-3",
+        "text-white/50 hover:text-white duration-200 text-lg font-medium tracking-[0.07px] py-3 text-left w-full",
         {
-          "text-white": href.startsWith(`/${segment}`),
+          "text-white": isActive,
         },
       )}
       onClick={() => {

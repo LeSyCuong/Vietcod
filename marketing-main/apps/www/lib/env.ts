@@ -9,6 +9,6 @@ export const env = () =>
       NEXT_PUBLIC_BACKEND_URL: z
         .string()
         .url()
-        .default("https://tienkiemtruyenky.click"),
+        .default("https://api.vietcod.com"),
     })
     .parse(process.env);

@@ -9,7 +9,6 @@ import "./globals.css";
 import { ConsentManagerProvider } from "@c15t/nextjs";
 import { ConsentBanner } from "./consent-banner";
 import { Tracking } from "./tracking";
-import { Suspense } from "react";
 
 const parsedEnv = env();
 
@@ -60,6 +59,7 @@ export const metadata: Metadata = {
     "vận hành game trọn gói",
   ],
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="vi"
       className={`[color-scheme:dark] scroll-smooth ${GeistSans.variable} ${GeistMono.variable}`}
     >
       <body className="min-h-screen overflow-x-hidden antialiased bg-black text-pretty">
@@ -84,13 +84,14 @@ export default function RootLayout({
           <ConsentBanner />
 
           <div className="relative overflow-x-clip">
-            <Suspense fallback={<div className="h-16" />}>
-              <Navigation />
-            </Suspense>
+            <Navigation />
+
             {children}
+
             <Tracking />
+
             {process.env.NODE_ENV !== "production" ? (
-              <div className="fixed bottom-0 right-0 flex items-center justify-center w-6 h-6 p-3 m-8 font-mono text-xs text-black bg-white rounded-lg pointer-events-none ">
+              <div className="fixed bottom-0 right-0 flex items-center justify-center w-6 h-6 p-3 m-8 font-mono text-xs text-black bg-white rounded-lg pointer-events-none z-[9999]">
                 <div className="block sm:hidden md:hidden lg:hidden xl:hidden 2xl:hidden">
                   al
                 </div>

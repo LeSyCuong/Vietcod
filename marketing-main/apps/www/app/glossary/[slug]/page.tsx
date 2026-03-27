@@ -2,7 +2,10 @@ import { CTA } from "@/components/cta";
 import { Frame } from "@/components/frame";
 
 import { MDX } from "@/components/mdx-content";
-import { TopLeftShiningLight, TopRightShiningLight } from "@/components/svg/background-shiny";
+import {
+  TopLeftShiningLight,
+  TopRightShiningLight,
+} from "@/components/svg/background-shiny";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { MeteorLinesAngular } from "@/components/ui/meteorLines";
 import { cn } from "@/lib/utils";
@@ -162,7 +165,9 @@ const GlossaryTermWrapper = async ({
             </div>
             <div className="sm:mx-6 mt-12">
               <FAQ
-                items={term.faq.filter((item: any) => item.question && item.answer)}
+                items={term.faq.filter(
+                  (item: any) => item.question && item.answer,
+                )}
                 title={`Questions & Answers about ${term.term}`}
                 description={`We answer common questions about ${term.term}.`}
                 epigraph="FAQ"
@@ -173,9 +178,11 @@ const GlossaryTermWrapper = async ({
           <div className="items-start hidden h-full gap-4 pt-8 space-y-4 prose lg:sticky top-24 lg:w-1/4 not-prose lg:mt-12 lg:flex lg:flex-col min-w-0 max-w-full overflow-hidden">
             {term.tableOfContents?.length !== 0 ? (
               <div className="flex flex-col gap-4 not-prose lg:gap-2">
-                <p className="text-sm prose text-nowrap text-white/50">Contents</p>
+                <p className="text-sm prose text-nowrap text-white/50">
+                  Contents
+                </p>
                 <ul className="relative flex flex-col gap-1 overflow-hidden min-w-0">
-                  {term.tableOfContents.map((heading) => {
+                  {term.tableOfContents.map((heading: any) => {
                     if (!heading) {
                       return null;
                     }
@@ -217,7 +224,9 @@ const GlossaryTermWrapper = async ({
                                 <h3 className="text-sm font-semibold flex items-center text-white">
                                   <Zap className="mr-2 h-5 w-5" /> TL;DR
                                 </h3>
-                                <p className="text-sm text-white/80">{relatedTerm.tldr}</p>
+                                <p className="text-sm text-white/80">
+                                  {relatedTerm.tldr}
+                                </p>
                               </div>
                             </Frame>
                           </CardHeader>
@@ -231,7 +240,9 @@ const GlossaryTermWrapper = async ({
                     ))}
                   </div>
                 ) : (
-                  <p className="text-sm text-white/50">No related terms found.</p>
+                  <p className="text-sm text-white/50">
+                    No related terms found.
+                  </p>
                 )}
               </div>
             </div>

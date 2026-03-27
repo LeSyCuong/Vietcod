@@ -1,4 +1,3 @@
-// app/templates/data.ts
 import { env } from "@/lib/env";
 
 export type GameProduct = {
@@ -13,10 +12,8 @@ export type GameProduct = {
 
 const parsedEnv = env();
 
-export const API_URL = parsedEnv.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-
 const API_BACKEND =
-  parsedEnv.NEXT_PUBLIC_BACKEND_URL || "https://tienkiemtruyenky.click";
+  parsedEnv.NEXT_PUBLIC_BACKEND_URL || "https://api.vietcod.com";
 
 export const getImgUrl = (img: string | undefined | null) => {
   if (!img) return "/images/placeholder.png";
