@@ -12,8 +12,8 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { API_URL, type GameProduct, getImgUrl } from "../data";
+import { cookies } from "next/headers";
 
-// [CHỈNH SỬA] Ép trang này luôn render động để vượt qua lỗi Prerender khi Build
 export const dynamic = "force-dynamic";
 
 type Props = {
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export default async function TemplateDetail(props: Props) {
-  // Next.js 15+ yêu cầu await params trước khi sử dụng
+  const cookieStore = await cookies();
   const { slug } = await props.params;
 
   // Fetch dữ liệu từ API của Vietcod
