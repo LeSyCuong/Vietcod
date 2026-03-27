@@ -12,19 +12,16 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { API_URL, type GameProduct, getImgUrl } from "../data";
-import { cookies } from "next/headers";
-
-export const dynamic = "force-dynamic";
+import { connection } from "next/server"; 
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function TemplateDetail(props: Props) {
-  const cookieStore = await cookies();
+  await connection();
   const { slug } = await props.params;
 
-  // Fetch dữ liệu từ API của Vietcod
   const res = await fetch(`${API_URL}/sanpham-game`, { 
     cache: "no-store",
     next: { revalidate: 0 } 
