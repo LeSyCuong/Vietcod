@@ -18,6 +18,9 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const generateStaticParams = () => [];
+export const dynamicParams = true;
+
 export default async function TemplateDetail(props: Props) {
   await connection();
   const { slug } = await props.params;
