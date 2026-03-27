@@ -85,9 +85,7 @@ export default function RootLayout({
 
           <div className="relative overflow-x-clip">
             <Navigation />
-
             {children}
-
             <Tracking />
 
             {process.env.NODE_ENV !== "production" ? (
