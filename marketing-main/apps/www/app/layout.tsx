@@ -87,7 +87,9 @@ export default function RootLayout({
             <Suspense fallback={<div className="h-16" />}>
               <Navigation />
             </Suspense>
-            {children}
+           <Suspense fallback={<div>Đang tải nội dung...</div>}>
+    {children}
+  </Suspense>
             <Tracking />
             {process.env.NODE_ENV !== "production" ? (
               <div className="fixed bottom-0 right-0 flex items-center justify-center w-6 h-6 p-3 m-8 font-mono text-xs text-black bg-white rounded-lg pointer-events-none ">
