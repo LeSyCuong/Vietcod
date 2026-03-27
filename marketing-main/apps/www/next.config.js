@@ -12,10 +12,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // TẮT tính năng này để tương thích với force-dynamic
-    cacheComponents: false, 
-  },
   typescript: {
     // Bỏ qua lỗi TypeScript khi build
     ignoreBuildErrors: true,
