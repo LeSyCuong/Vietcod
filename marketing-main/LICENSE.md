@@ -1,3 +1,4 @@
+Copyright (c) 2026-present VietCod (https://vietcod.com)
 Copyright (c) 2023-present Unkeyed, Inc.
 
 Portions of this software are licensed as follows:
