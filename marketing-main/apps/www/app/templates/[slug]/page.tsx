@@ -22,16 +22,8 @@ export async function generateStaticParams() {
   }
 }
 
-type Props = {
-  params: Promise<{ slug: string }>;
-};
-
-export default async function TemplateDetail(props: Props) {
-  const resolvedParams = await props.params;
-  const slug = resolvedParams.slug;
-
-  let game: GameProduct | undefined = undefined;
-
+async function getGame(slug: string): Promise<GameProduct | undefined> {
+  "use cache";
   try {
     const [rows] = await db.execute(
       "SELECT id, name, img, price, category, content, link_youtube FROM sanpham_game WHERE id = ? LIMIT 1",
@@ -40,11 +32,23 @@ export default async function TemplateDetail(props: Props) {
 
     const games = rows as GameProduct[];
     if (games.length > 0) {
-      game = games[0];
+      return games[0];
     }
   } catch (error) {
     console.error(`Database Query Error for slug ${slug}:`, error);
   }
+  return undefined;
+}
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function TemplateDetail(props: Props) {
+  const resolvedParams = await props.params;
+  const slug = resolvedParams.slug;
+
+  const game = await getGame(slug);
 
   if (!game) return notFound();
 
