@@ -63,7 +63,7 @@ export function TemplatesClient({
   }, [initialGames]);
 
   const filteredGames = useMemo(() => {
-    return initialGames.filter((game) => {
+    const filtered = initialGames.filter((game) => {
       const searchContent = (game.content || "").replace(/<[^>]*>?/gm, "");
       const matchesSearch =
         game.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -87,6 +87,9 @@ export function TemplatesClient({
 
       return matchesSearch && matchesCategory && matchesPrice;
     });
+
+    // Sắp xếp ID từ cao xuống thấp (hiển thị từ dưới lên theo ID)
+    return filtered.sort((a, b) => b.id - a.id);
   }, [initialGames, searchQuery, selectedCategories, priceFilter]);
 
   const totalPages = Math.ceil(filteredGames.length / ITEMS_PER_PAGE);
