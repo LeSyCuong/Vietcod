@@ -3,13 +3,11 @@ import Image from "next/image";
 import { ArrowRight, VenetianMask } from "lucide-react";
 import { getImgUrl, type GameProduct } from "@/app/templates/data";
 
-// Hàm loại bỏ thẻ HTML
 const stripHtml = (html: string) => {
   if (!html) return "";
   return html.replace(/<[^>]*>?/gm, "");
 };
 
-// Hàm Format tiền VNĐ
 const formatPrice = (price: number) => {
   return new Intl.NumberFormat("vi-VN", {
     style: "currency",
@@ -77,9 +75,9 @@ export function GameCard({ game }: { game: GameProduct }) {
 
           <div
             className="w-8 h-8 lg:w-9 lg:h-9 rounded-full border border-white/10 flex items-center justify-center 
-                          group-hover:bg-white/90 group-hover:border-white/90 duration-300"
+                          group-hover:bg-white/90 group-hover:border-white/90 duration-100"
           >
-            <ArrowRight className="w-4 h-4 text-white group-hover:text-black duration-300" />
+            <ArrowRight className="w-4 h-4 text-white group-hover:text-black duration-100" />
           </div>
         </div>
       </div>

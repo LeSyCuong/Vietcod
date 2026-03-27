@@ -88,7 +88,6 @@ export function TemplatesClient({
       return matchesSearch && matchesCategory && matchesPrice;
     });
 
-    // Sắp xếp ID từ cao xuống thấp (hiển thị từ dưới lên theo ID)
     return filtered.sort((a, b) => b.id - a.id);
   }, [initialGames, searchQuery, selectedCategories, priceFilter]);
 
@@ -116,7 +115,7 @@ export function TemplatesClient({
     setCurrentPage(1);
   };
   const getPaginationRange = (current: number, total: number) => {
-    const delta = 1; // Số trang hiển thị xung quanh trang hiện tại
+    const delta = 1; 
     const range = [];
     const rangeWithDots = [];
     let l;
